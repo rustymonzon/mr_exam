@@ -74,7 +74,11 @@ if (!customElements.get('product-form')) {
       this.errorMessageWrapper.toggleAttribute('hidden', !errorMessage);
 
       if (errorMessage) {
-        this.errorMessage.textContent = errorMessage;
+        if ( errorMessage == 'Required parameter missing or invalid: id') {
+          this.errorMessage.textContent = 'Please select a Size';
+        } else {
+          this.errorMessage.textContent = errorMessage;
+        }
       }
     }
   });

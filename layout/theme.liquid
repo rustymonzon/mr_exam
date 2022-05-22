@@ -175,9 +175,9 @@
         grid-template-columns: 100%;
         min-height: 100%;
         margin: 0;
-        font-size: 1.5rem;
+        font-size: 14px;
         letter-spacing: 0.06rem;
-        line-height: calc(1 + 0.8 / var(--font-body-scale));
+        line-height: calc(1 + 0.5 / var(--font-body-scale));
         font-family: var(--font-body-family);
         font-style: var(--font-body-style);
         font-weight: var(--font-body-weight);
@@ -185,7 +185,7 @@
 
       @media screen and (min-width: 750px) {
         body {
-          font-size: 1.6rem;
+          font-size: 14px;
         }
       }
     {% endstyle %}
@@ -208,9 +208,12 @@
       document.documentElement.classList.add('shopify-design-mode');
     }
     </script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    {{ 'ram.css' | asset_url | stylesheet_tag }}
   </head>
 
-  <body class="gradient">
+  <body class="gradient ramui">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>
@@ -221,7 +224,9 @@
       {{ content_for_layout }}
     </main>
 
+    {% comment %}
     {% section 'footer' %}
+    {% endcomment %}
 
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
@@ -258,5 +263,6 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+    
   </body>
 </html>

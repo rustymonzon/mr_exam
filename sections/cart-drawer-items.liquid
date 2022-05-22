@@ -1,0 +1,29 @@
+{% if cart.items.size > 0 %}
+{% for line_item in cart.items %}
+<div class="line-item">
+    <div class="rrow-sm flex">
+        <div class="column xs-4">
+            <img src="{{ line_item.image | img_url:'300x'}}" alt="">
+        </div>
+        <div class="column xs-8">
+            <h4 class="mini-title">{{ line_item.title }}</h4>
+
+            <h4 class="mini-price">{{ line_item.quantity }}x <strong>{{ line_item.original_price | money }}</strong></h4>
+
+            <div class="mini-variants">
+                {%- for option in line_item.options_with_values -%}
+                <div class="rrow flex">
+                    <div class="column xs-2">
+                        {{ option.name }}:
+                    </div>
+                    <div class="column xs-10">
+                        {{ option.value }}
+                    </div>
+                </div>
+                {%- endfor -%}
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endif %}

@@ -213,7 +213,7 @@ html.no-js .no-js-hidden {
 .page-width {
   max-width: var(--page-width);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  /* padding: 0 1.5rem; */
 }
 
 .page-width-desktop {
@@ -282,7 +282,7 @@ body,
 .color-inverse,
 .color-accent-1,
 .color-accent-2 {
-  color: rgba(var(--color-foreground), 0.75);
+  color: var(--color-foreground);
   background-color: rgb(var(--color-background));
 }
 
@@ -399,13 +399,15 @@ h5,
 
 h1,
 .h1 {
-  font-size: calc(var(--font-heading-scale) * 3rem);
+  font-size: calc(var(--font-heading-scale) * 2.2rem);
+  font-weight: 700;
 }
 
 @media only screen and (min-width: 750px) {
   h1,
   .h1 {
-    font-size: calc(var(--font-heading-scale) * 4rem);
+    font-size: calc(var(--font-heading-scale) * 2.2rem);
+    font-weight: 500;
   }
 }
 
@@ -510,6 +512,7 @@ blockquote {
   font-size: 1.3rem;
   line-height: calc(1 + 0.5 / var(--font-body-scale));
   letter-spacing: 0.04rem;
+  text-transform: uppercase;
 }
 
 .color-foreground {
@@ -1262,14 +1265,16 @@ button.shopify-payment-button__button--unbranded,
   --border-opacity: calc(1 - var(--buttons-border-opacity));
   border-radius: var(--buttons-radius-outset);
   position: relative;
+  font-weight: 700 !important;
+  text-transform: uppercase;
 }
 
 .button,
 .shopify-challenge__button,
 .customer button,
 button.shopify-payment-button__button--unbranded {
-  min-width: calc(12rem + var(--buttons-border-width) * 2);
-  min-height: calc(4.5rem + var(--buttons-border-width) * 2);
+  min-width: calc(4.0rem + var(--buttons-border-width) * 2);
+  min-height: calc(3.0rem + var(--buttons-border-width) * 2);
 }
 
 .shopify-payment-button__button--branded {
@@ -1287,7 +1292,7 @@ button.shopify-payment-button__button--unbranded {
   justify-content: center;
   align-items: center;
   border: 0;
-  padding: 0 3rem;
+  padding: 0 2.5rem;
   cursor: pointer;
   font: inherit;
   font-size: 1.5rem;
@@ -1333,17 +1338,29 @@ button.shopify-payment-button__button--unbranded {
   transition: box-shadow var(--duration-short) ease;
 }
 
-.button:not([disabled]):hover::after,
+/* .button:not([disabled]):hover::after,
 .shopify-challenge__button:hover::after,
 .customer button:hover::after,
 .shopify-payment-button__button--unbranded:hover::after {
   --border-offset: 1.3px;
   box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset)) rgba(var(--color-button-text), var(--border-opacity)),
     0 0 0 calc(var(--buttons-border-width) + 1px) rgba(var(--color-button), var(--alpha-button-background));
-}
+} */
 
 .button--secondary:after {
   --border-opacity: var(--buttons-border-opacity);
+}
+
+.button--secondary {
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.button--secondary:hover {
+  background-color: rgb(var(--color-foreground));
+  color: rgb(var(--color-background));
 }
 
 .button:focus-visible,
@@ -2196,6 +2213,7 @@ input[type='checkbox'] {
   display: block;
   position: relative;
   background-color: rgb(var(--color-background));
+  margin-top: 1.5rem;
 }
 
 .header-wrapper--border-bottom {
@@ -2204,17 +2222,14 @@ input[type='checkbox'] {
 
 .header {
   display: grid;
-  grid-template-areas: 'left-icon heading icons';
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: 'icons';
+  grid-template-columns: 1fr;
   align-items: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 0 1rem;
 }
 
 @media screen and (min-width: 990px) {
   .header {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
   }
 
   .header--has-menu:not(.header--middle-left) {
@@ -2224,9 +2239,8 @@ input[type='checkbox'] {
   .header--top-left,
   .header--middle-left:not(.header--has-menu) {
     grid-template-areas:
-      'heading icons'
-      'navigation navigation';
-    grid-template-columns: 1fr auto;
+      'icons';
+    grid-template-columns: 1fr;
   }
 
   .header--middle-left {
@@ -2315,6 +2329,7 @@ input[type='checkbox'] {
   display: flex;
   grid-area: icons;
   justify-self: end;
+  position: relative;
 }
 
 .header__icon:not(.header__icon--summary),
@@ -2355,8 +2370,12 @@ input[type='checkbox'] {
 }
 
 .header__icon--cart {
+  color: #888888;
+  font-size: 12px;
+  letter-spacing: normal;
   position: relative;
-  margin-right: -1.2rem;
+  text-decoration: none;
+  text-transform: capitalize;
 }
 
 @media screen and (max-width: 989px) {
@@ -2872,4 +2891,130 @@ details-disclosure > details {
 
 .font-body-bold {
   font-weight: var(--font-body-weight-bold);
+}
+
+.header .inner-width {
+  padding: 0px 15px;
+}
+
+.inner-width {
+  position: relative;
+  padding: 0px 15px;
+  max-width: 1160px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media screen and (max-width: 749px) {
+  .header-page-width {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.required {
+ color: #C90000; 
+}
+
+.form__label,
+.product__description {
+  color: #888888;
+}
+
+.product__description {
+  margin-bottom: 3rem !important;
+}
+
+.divider-grey {
+  border-top: 1px solid #F8F8F8;
+  border-bottom: 1px solid #F8F8F8;
+  padding: .5rem 0;
+}
+
+.selected-label {
+  color: #222222;
+  font-weight: 700;
+}
+
+ul.product__media-list li {
+  max-width: 100%;
+}
+
+button#cart-icon-bubble {
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  border: 1px solid transparent;
+  display: flex;
+  padding-top: .6rem;
+  padding-bottom: .6rem;
+  position: relative;
+  z-index: 3;
+}
+
+#mini-cart {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  display: none;
+  position: absolute;
+  margin-top: -1px;
+  min-width: 290px;
+  padding: 2rem 2.5rem;
+  right: 0;
+  top: 100%;
+  z-index: 2;
+}
+
+button#cart-icon-bubble.active {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-bottom: 1px solid #ffffff;
+  font-weight: 700;
+}
+
+button#cart-icon-bubble.active + #mini-cart {
+  display: block;
+}
+
+#mini-cart img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+#mini-cart .line-item {
+  margin-bottom: 3.5rem;
+}
+
+#mini-cart .line-item:last-of-type {
+  margin-bottom: 0;
+}
+
+.mini-title,
+.mini-price,
+.mini-variants {
+  letter-spacing: normal;
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
+
+/* RAM.css Extend */
+.ramui .rrow-sm:not(.column) {
+  margin-left: -7.5px; 
+  margin-right: -7.5px;
+}
+
+.ramui .rrow-xs:not(.column) {
+  margin-left: -3.5px; 
+  margin-right: -3.5px;
+}
+  
+.ramui .rrow-xs .column {
+  padding-left: 3.5px; 
+  padding-right: 3.5px;
+}
+
+#cart-notification {
+  background-color: #ffffff;
 }

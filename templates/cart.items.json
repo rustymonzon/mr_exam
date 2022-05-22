@@ -1,0 +1,13 @@
+{
+    "layout": false,
+    "sections": {
+      "cart-drawer-items": {
+        "type": "cart-drawer-items",
+        "settings": {
+        }
+        }
+    },
+    "order": [
+      "cart-drawer-items" 
+    ]
+}

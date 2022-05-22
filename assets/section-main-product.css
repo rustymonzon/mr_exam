@@ -183,14 +183,14 @@ fieldset.product-form__input .form__label {
 }
 
 .product-form__input input[type='radio'] + label {
-  border: var(--variant-pills-border-width) solid rgba(var(--color-foreground), var(--variant-pills-border-opacity));
+  border: var(--variant-pills-border-width) solid #cccccc;
   background-color: rgb(var(--color-background));
   color: rgba(var(--color-foreground));
   border-radius: var(--variant-pills-radius);
-  color: rgb(var(--color-foreground));
+  color: #888888;
   display: inline-block;
   margin: 0.7rem 0.5rem 0.2rem 0;
-  padding: 1rem 2rem;
+  padding: 1.2rem 1.5rem;
   font-size: 1.4rem;
   letter-spacing: 0.1rem;
   line-height: 1;
@@ -297,7 +297,7 @@ fieldset.product-form__input .form__label {
 
 .product__info-container .product-form,
 .product__info-container .product__description {
-  margin: 2.5rem 0;
+  margin: 1.5rem 0;
 }
 
 .product__text {
@@ -344,7 +344,6 @@ a.product__text {
 }
 
 .product .price__container {
-  margin-bottom: 0.5rem;
 }
 
 .product .price dl {
