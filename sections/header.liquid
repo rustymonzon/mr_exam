@@ -99,7 +99,7 @@
   <div class="page-width header-page-width">  
     <header class="header color-{{ section.settings.color_scheme }} gradient">
         <div class="inner-width">
-          <div class="rrow flex xs-justify-end">
+          <div class="rrow flex xs-justify-end xs-no-gutter">
             {%- if section.settings.menu != blank -%}
               <header-drawer data-breakpoint="tablet">
                 <details id="Details-menu-drawer-container" class="menu-drawer-container">
@@ -563,15 +563,9 @@
 
                 <button type="button" class="header__icon--cart link focus-inset" id="cart-icon-bubble">
                   <div class="xs-inline-block lg-none">
-                    {%- liquid
-                      if cart == empty
-                        render 'icon-cart-empty'
-                      else
-                        render 'icon-cart'
-                      endif
-                    -%}
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                   </div>
-                  <div class="xs-none lg-inline-block">my cart</div>
+                  <div class="xs-none lg-inline-block cart-text">my cart</div>
                   <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
                   {%- if cart != empty -%}
                         {%- if cart.item_count < 100 -%}

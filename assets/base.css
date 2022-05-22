@@ -360,7 +360,7 @@ body,
 
 .text-body {
   font-size: 1.5rem;
-  letter-spacing: 0.06rem;
+  letter-spacing: normal;
   line-height: calc(1 + 0.8 / var(--font-body-scale));
   font-family: var(--font-body-family);
   font-style: var(--font-body-style);
@@ -381,7 +381,7 @@ h5,
   font-family: var(--font-heading-family);
   font-style: var(--font-heading-style);
   font-weight: var(--font-heading-weight);
-  letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
+  letter-spacing: normal;
   color: rgb(var(--color-foreground));
   line-height: calc(1 + 0.3 / max(1, var(--font-heading-scale)));
   word-break: break-word;
@@ -2893,9 +2893,7 @@ details-disclosure > details {
   font-weight: var(--font-body-weight-bold);
 }
 
-.header .inner-width {
-  padding: 0px 15px;
-}
+
 
 .inner-width {
   position: relative;
@@ -2909,6 +2907,10 @@ details-disclosure > details {
   .header-page-width {
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .header .inner-width {
+    padding: 0px 10px;
   }
 }
 
@@ -2947,6 +2949,7 @@ button#cart-icon-bubble {
   align-items: center;
   border: 1px solid transparent;
   display: flex;
+  font-size: 11px;
   padding-top: .6rem;
   padding-bottom: .6rem;
   position: relative;
@@ -2959,10 +2962,12 @@ button#cart-icon-bubble {
   display: none;
   position: absolute;
   margin-top: -1px;
-  min-width: 290px;
+  min-width: 280px;
+  max-width: 290px;
   padding: 2rem 2.5rem;
   right: 0;
   top: 100%;
+  width: 100%;
   z-index: 2;
 }
 
@@ -2994,6 +2999,7 @@ button#cart-icon-bubble.active + #mini-cart {
 .mini-title,
 .mini-price,
 .mini-variants {
+  font-size: 13px;
   letter-spacing: normal;
   margin: 0 0 1rem 0;
   padding: 0;
@@ -3017,4 +3023,13 @@ button#cart-icon-bubble.active + #mini-cart {
 
 #cart-notification {
   background-color: #ffffff;
+}
+
+.fa-shopping-cart {
+  margin-right: 4px;
+  font-size: 20px;
+}
+
+.cart-text {
+  margin-right: 4px;
 }

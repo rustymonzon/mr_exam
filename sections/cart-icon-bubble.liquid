@@ -1,17 +1,11 @@
 <div class="xs-inline-block lg-none">
-  {%- liquid
-    if cart == empty
-      render 'icon-cart-empty'
-    else
-      render 'icon-cart'
-    endif
-  -%}
+  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
 </div>
-<div class="xs-none lg-inline-block">my cart</div>
+<div class="xs-none lg-inline-block cart-text">my cart</div>
 <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
 {%- if cart != empty -%}
   {%- if cart.item_count < 100 -%}
-    <span aria-hidden="true">( {{ cart.item_count }} )</span>
+    <span aria-hidden="true"> ( {{ cart.item_count }} )</span>
   {%- endif -%}
   <span class="visually-hidden">( {{ 'sections.header.cart_count' | t: count: cart.item_count }} )</span>
 {%- endif -%}
