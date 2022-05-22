@@ -1,4 +1,4 @@
-Hi,
+Hi moustacherepublic,
 
 I develop it on Shopify with a base theme "Dawn" I also added my own grid system "ram.css"
 
